@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Ant / NetBeans build outputs
+**/build/
+**/dist/
+**/nbproject/private/
+**/work/
+
+# IDE
+.idea/
+.vscode/
