@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.testing.AppTest
+Test set: com.testing.FileLifecycleTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in com.testing.AppTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in com.testing.FileLifecycleTest
