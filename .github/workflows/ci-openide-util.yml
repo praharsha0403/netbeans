@@ -28,21 +28,11 @@ jobs:
           cd nbbuild
           ant
 
-      - name: Build openide.util module
+      - name: Run tests for openide.util
         run: |
           cd platform/openide.util
-          ant compile
-
-      - name: Compile tests only
-        run: |
-          cd platform/openide.util
-          ant compile-tests
+          ant test
         continue-on-error: true
-
-      - name: Run ParametersTest2 only
-        run: |
-          cd platform/openide.util
-          ant test -Dtest.includes=org/openide/util/ParametersTest2.class
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
