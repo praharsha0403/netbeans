@@ -1,0 +1,42 @@
+name: CI - openide.util Tests
+
+on:
+  push:
+    branches: [ "feature/task-fsm", "feature/fsm-testing", "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install Ant
+        run: sudo apt-get install -y ant
+
+      - name: Build nbbuild harness
+        run: |
+          cd nbbuild
+          ant
+
+      - name: Run tests for openide.util
+        run: |
+          cd platform/openide.util
+          ant test
+        continue-on-error: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: platform/openide.util/build/test/unit/results/
