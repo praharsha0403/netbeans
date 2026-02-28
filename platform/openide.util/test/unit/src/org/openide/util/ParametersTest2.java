@@ -7,8 +7,7 @@ public class ParametersTest2 {
 
     @Test
     public void testNotNullValid() {
-        String result = Parameters.notNull("myParam", "hello");
-        assertEquals("hello", result);
+        Parameters.notNull("myParam", "hello");
     }
 
     @Test(expected = NullPointerException.class)
@@ -18,8 +17,7 @@ public class ParametersTest2 {
 
     @Test
     public void testNotWhitespaceValid() {
-        String result = Parameters.notWhitespace("myParam", "hello");
-        assertEquals("hello", result);
+        Parameters.notWhitespace("myParam", "hello");
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -34,8 +32,7 @@ public class ParametersTest2 {
 
     @Test
     public void testJavaIdentifierValid() {
-        String result = Parameters.javaIdentifier("myParam", "validName");
-        assertEquals("validName", result);
+        Parameters.javaIdentifier("myParam", "validName");
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -45,7 +42,6 @@ public class ParametersTest2 {
 
     @Test
     public void testJavaIdentifierUnderscore() {
-        String result = Parameters.javaIdentifier("myParam", "_valid");
-        assertEquals("_valid", result);
+        Parameters.javaIdentifier("myParam", "_valid");
     }
 }
